@@ -1,0 +1,11 @@
+{
+    "rules": {
+        "align":true,
+        "curly": true,
+        "new-parens": true,
+        "no-empty": true,
+        "no-trailing-whitespace": true,
+        "semicolon": true,
+        "whitespace": true
+    }
+}

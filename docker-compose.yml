@@ -1,0 +1,30 @@
+version: '3'
+services:
+  web:
+    build:
+      context: ./
+    environment:
+      - MONGO_DB=mongodb://mongo/pws?authSource=admin
+      - MONGO_USERNAME=${MONGO_USERNAME}
+      - MONGO_PASSWORD=${MONGO_PASSWORD}
+      - GMAIL_EMAIL=${GMAIL_EMAIL}
+      - GMAIL_PASS=${GMAIL_PASS}
+      - TO_EMAIL=${TO_EMAIL}
+    restart: unless-stopped
+    depends_on:
+      - mongo
+    ports:
+      - "3000:3000"
+  mongo:
+    image: clutteredcode/mongo-alpine
+    environment:
+      - MONGO_USERNAME=${MONGO_USERNAME}
+      - MONGO_PASSWORD=${MONGO_PASSWORD}
+    entrypoint:
+      - /entrypoint.sh
+      - mongod
+      - --auth
+      - --bind_ip_all
+    restart: unless-stopped
+    ports:
+      - "27017:27017"

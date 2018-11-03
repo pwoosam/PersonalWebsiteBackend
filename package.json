@@ -1,0 +1,38 @@
+{
+    "name": "spn-media-hub-backend",
+    "version": "0.1.0",
+    "repository": {
+        "type": "???",
+        "url": "???"
+    },
+    "scripts": {
+        "start": "npm run build && node ./dist/server.js",
+        "build": "npm run clean && npm run lint && npm run swagger-gen && npm run routes-gen && tsc && npm run copy-swagger-ui",
+        "lint": "tslint ./src/**/*.ts",
+        "clean": "rimraf dist",
+        "swagger-gen": "tsoa swagger",
+        "routes-gen": "tsoa routes",
+        "copy-swagger-ui": "ncp ./src/swagger-ui ./dist/swagger-ui",
+        "tsoa": "tsoa"
+    },
+    "dependencies": {
+        "body-parser": "^1.18.3",
+        "express": "^4.16.4",
+        "method-override": "^3.0.0",
+        "mongoose": "^5.3.5",
+        "nodemailer": "^4.6.8",
+        "tsoa": "^2.2.5"
+    },
+    "devDependencies": {
+        "@types/body-parser": "^1.17.0",
+        "@types/express": "^4.16.0",
+        "@types/method-override": "^0.0.31",
+        "@types/mongoose": "^5.2.19",
+        "@types/node": "^10.12.0",
+        "@types/nodemailer": "^4.6.5",
+        "ncp": "^2.0.0",
+        "rimraf": "^2.6.2",
+        "tslint": "^5.11.0",
+        "typescript": "^3.1.3"
+    }
+}

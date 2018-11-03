@@ -1,0 +1,11 @@
+{
+    "swagger": {
+        "outputDirectory": "./dist",
+        "entryFile": "./src/server.ts",
+        "host": "localhost:3000"
+    },
+    "routes": {
+        "entryFile": "./src/server.ts",
+        "routesDir": "./src"
+    }
+}
