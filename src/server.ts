@@ -19,7 +19,7 @@ const corsOptions: cors.CorsOptions = {
   }
 };
 
-app.options('*', cors(corsOptions));
+app.options('*', cors());
 
 app.use('/docs', express.static(__dirname + '/swagger-ui'));
 app.use('/swagger.json', (req, res) => {
