@@ -27,4 +27,4 @@ services:
       - --bind_ip_all
     restart: unless-stopped
     ports:
-      - "27017:27017"
+      - "7500:27017"
