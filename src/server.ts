@@ -8,7 +8,18 @@ import { RegisterRoutes } from './routes';
 
 const app = express();
 
-app.options('*', cors("www.patrickwoosam.com"));
+const whitelist = ['https://www.patrickwoosam.com', 'http://localhost:9000'];
+const corsOptions: cors.CorsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+};
+
+app.options('*', cors(corsOptions));
 
 app.use('/docs', express.static(__dirname + '/swagger-ui'));
 app.use('/swagger.json', (req, res) => {
