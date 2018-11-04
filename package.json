@@ -1,9 +1,9 @@
 {
-    "name": "spn-media-hub-backend",
+    "name": "personal-website-backend",
     "version": "0.1.0",
     "repository": {
-        "type": "???",
-        "url": "???"
+        "type": "git",
+        "url": "git://github.com/pwoosam/PersonalWebsiteBackend.git"
     },
     "scripts": {
         "start": "npm run build && node ./dist/server.js",
