@@ -4,7 +4,7 @@ services:
     build:
       context: ./
     environment:
-      - MONGO_DB=mongodb://mongo/pws?authSource=admin
+      - MONGO_DB=${MONGO_DB}
       - MONGO_USERNAME=${MONGO_USERNAME}
       - MONGO_PASSWORD=${MONGO_PASSWORD}
       - GMAIL_EMAIL=${GMAIL_EMAIL}
