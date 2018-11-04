@@ -2,10 +2,13 @@ import './controllers/emailController';
 //import './connection';
 import * as bodyParser from 'body-parser';
 import * as express from 'express';
+import * as cors from 'cors';
 import * as methodOverride from 'method-override';
 import { RegisterRoutes } from './routes';
 
 const app = express();
+
+app.options('*', cors("www.patrickwoosam.com"));
 
 app.use('/docs', express.static(__dirname + '/swagger-ui'));
 app.use('/swagger.json', (req, res) => {
