@@ -8,10 +8,9 @@ import { RegisterRoutes } from './routes';
 
 const app = express();
 
-const whitelist = ['https://www.patrickwoosam.com'];
 const corsOptions: cors.CorsOptions = {
   origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
+    if (origin.endsWith('.patrickwoosam.com')) {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));
