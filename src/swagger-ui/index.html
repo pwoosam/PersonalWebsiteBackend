@@ -41,9 +41,19 @@
       const hostname = window.location.hostname;
       const port = window.location.port;
 
+      const buildUrl = function() {
+        let url = `${protocol}//${hostname}`;
+        if (port.length) {
+          url += `:${port}/swagger.json`;
+        } else {
+          url += '/swagger.json';
+        }
+        return url;
+      }
+
       // Build a system
       const ui = SwaggerUIBundle({
-        url: `${protocol}//${hostname}:${port}/swagger.json`,
+        url: buildUrl(),
         dom_id: '#swagger-ui',
         deepLinking: true,
         presets: [
