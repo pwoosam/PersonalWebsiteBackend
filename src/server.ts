@@ -8,7 +8,7 @@ import { RegisterRoutes } from './routes';
 
 const app = express();
 
-const whitelist = ['https://www.patrickwoosam.com', 'http://localhost:9000'];
+const whitelist = ['https://www.patrickwoosam.com'];
 const corsOptions: cors.CorsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
