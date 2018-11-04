@@ -7,6 +7,7 @@
     },
     "routes": {
         "entryFile": "./src/server.ts",
-        "routesDir": "./src"
+        "routesDir": "./src",
+        "basePath": "/"
     }
 }
